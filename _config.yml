@@ -68,9 +68,9 @@ safe: False
 lsi: False
 username: vinhpz
 repo: vinhpz.github.io
-branch: source
+branch: master
 relative_source: ../zeit/
-destination: ../zeit-pages/
+destination: ../vinhpz.github.io/
 production_url:  https://zeit.js.org/
 source_url:  https://github.com/vinhpz/zeit/
 
