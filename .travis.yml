@@ -21,3 +21,8 @@ env:
 branches:
   only:
     - source
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
