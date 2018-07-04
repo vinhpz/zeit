@@ -9,7 +9,7 @@ baseurl: /
 
 # Website info
 title: Zeit
-description: Vinh Pham's place
+description: Tips and tools
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
@@ -26,11 +26,11 @@ twitter: uniqvinh # replace by your username
 facebook: uniqvinh # replace by your username
 
 # Disqus
-disqus: False
-disqus_shortname:  # replace with your disqus username
+disqus: True
+disqus_shortname: zeit-v
 
 # Google Analytics
-google_analytics:  # replace with your GA tracking identifier
+google_analytics: UA-116140586-1
 
 # Permalinks
 permalink: /:title
