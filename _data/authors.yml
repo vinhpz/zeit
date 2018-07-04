@@ -1,3 +1,13 @@
+vinh:
+  username: vinh
+  name: Vinh Pham
+  url_full: https://zeit.js.org/
+  url: zeit.js.org
+  bio: The awkward one
+  picture: assets/images/vinh.jpg
+  facebook: uniqvinh
+  twitter: uniqvinh
+  cover: False
 ghost:
   username: ghost
   name: Ghost
