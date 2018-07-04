@@ -8,4 +8,4 @@ class: page-template
 subclass: 'post page'
 ---
 
-Zeit is Zeit is Zeit
+Welcome to Zeit, a personal blog page by Vinh Pham. At Zeit, you will follow Vinh's life as a sysadmin and part-time web developer.
