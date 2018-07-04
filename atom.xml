@@ -6,5 +6,35 @@
     <link>
     </link>
     
+      
+      <item>
+        <title>Set and use Zsh as default shell in WSL</title>
+        
+          <description>&lt;p&gt;It isn’t that hard…&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 04 Jul 2018 09:00:00 +0000</pubDate>
+        <link>
+        /set-zsh-wsl</link>
+        <guid isPermaLink="true">/set-zsh-wsl</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Welcome to Zeit</title>
+        
+          <description>&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 04 Jul 2018 15:00:00 +0700</pubDate>
+        <link>
+        /welcome</link>
+        <guid isPermaLink="true">/welcome</guid>
+      </item>
+      
+    
   </channel>
 </rss>

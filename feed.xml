@@ -1,1 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-04T09:54:21+00:00</updated><id>/</id><title type="html">Zeit</title><subtitle>Tips and tools</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-04T17:39:46+07:00</updated><id>/</id><title type="html">Zeit</title><subtitle>Tips and tools</subtitle><entry><title type="html">Set and use Zsh as default shell in WSL</title><link href="/set-zsh-wsl" rel="alternate" type="text/html" title="Set and use Zsh as default shell in WSL" /><published>2018-07-04T16:00:00+07:00</published><updated>2018-07-04T16:00:00+07:00</updated><id>/set-zsh-wsl</id><content type="html" xml:base="/set-zsh-wsl">&lt;p&gt;It isn’t that hard…&lt;/p&gt;
+
+&lt;p&gt;A few months ago, I wrote an article to show how to get Zsh in WSL on Windows 10. But I haven’t exactly shown how to make it the default shell. In facts, you can’t (not the “official” way anyway), because bash.exe in System32 folder is meant to call bash shell, not zsh. So no matter how you try to set zsh as the default shell through chsh -s $(which zsh), it doesn’t work if you still call to bash.exe everytime you use WSL.&lt;/p&gt;
+
+&lt;p&gt;Knowing this, the WSL team has made some changes. In the recent Windows 10 Insider builds for Windows 10 Fall Creator Update, there’s a &lt;strong&gt;wsl.exe&lt;/strong&gt; file in System32 which performs two functions &lt;a href=&quot;https://github.com/Microsoft/BashOnWindows/issues/846#issuecomment-300836949&quot;&gt;according to a member of the WSL team&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When run without arguments, it will launch your default user’s default shell (which is configurable via the chsh command).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When run with arguments, it is an easy way to run a specific Linux binary (wsl.exe ls).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So that means you can actually use the true default shell now if you call to &lt;strong&gt;wsl.exe&lt;/strong&gt; instead of &lt;strong&gt;bash.exe&lt;/strong&gt;. Here’re examples, Hyper Terminal and Visual Studio Code. First of all, you have to set zsh as the default shell, (obviously). Type this to the current WSL terminal you’re using (like “Bash on Ubuntu on Windows”)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chsh -s $(which zsh)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now back to Hyper, edit the settings file where the &lt;strong&gt;shell&lt;/strong&gt; and &lt;strong&gt;shellArgs&lt;/strong&gt; options are like this&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shell: 'C:\\Windows\\System32\\wsl.exe',
+shellArgs: [],
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*NeQJKr2GrJXXuyYYVTRU9w.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s Hyper, how about Visual Studio Code? It’s the same. Just change “bash.exe” to “wsl.exe” in the settings file&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;terminal.integrated.shell.windows&quot;: &quot;C:\\Windows\\sysnative\\wsl.exe&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There we go! Everything should work fine now.&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="wsl" /><summary type="html">It isn’t that hard…</summary></entry><entry><title type="html">Welcome to Zeit</title><link href="/welcome" rel="alternate" type="text/html" title="Welcome to Zeit" /><published>2018-07-04T15:00:00+07:00</published><updated>2018-07-04T15:00:00+07:00</updated><id>/welcome</id><content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
+
+&lt;p&gt;We know that first impressions are important, so we’ve populated your new site with some initial &lt;strong&gt;Getting Started&lt;/strong&gt; posts that will help you get familiar with everything in no time. This is the first one!&lt;/p&gt;
+
+&lt;h3 id=&quot;there-are-a-few-things-that-you-should-know-up-front&quot;&gt;There are a few things that you should know up-front:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Ghost is designed for ambitious, professional publishers who want to actively build a business around their content. That’s who it works best for. If you’re using Ghost for some other purpose, that’s fine too - but it might not be the best choice for you.&lt;/li&gt;
+  &lt;li&gt;The entire platform can be modified and customized to suit your needs, which is very powerful, but doing so &lt;strong&gt;does&lt;/strong&gt; require some knowledge of code. Ghost is not necessarily a good platform for beginners or people who just want a simple personal blog.&lt;/li&gt;
+  &lt;li&gt;For the best experience we recommend downloading the Ghost Desktop App for your computer, which is the best way to access your Ghost site on a desktop device.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ghost is made by an independent non-profit organisation called the Ghost Foundation. We are 100% self funded by revenue from our &lt;a href=&quot;https://ghost.org/pricing&quot;&gt;Ghost(Pro)&lt;/a&gt; service, and every penny we make is re-invested into funding further development of free, open source technology for modern journalism.&lt;/p&gt;
+
+&lt;p&gt;The main thing you’ll want to read about next is probably: &lt;a href=&quot;https://demo.ghost.io/the-editor/&quot;&gt;the Ghost editor&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once you’re done reading, you can simply delete the default &lt;strong&gt;Ghost&lt;/strong&gt; user from your team to remove all of these introductory posts!&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="Getting started" /><summary type="html">Hey! Welcome to Ghost, it’s great to have you :)</summary></entry></feed>
