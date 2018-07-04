@@ -23,6 +23,7 @@ navigation: True # show the navbar links
 subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
+subscribe: https://zeit.us18.list-manage.com/subscribe/post?u=7bcc882e8e43813e17764c7ce&amp;id=cc5237eeed
 twitter: uniqvinh # replace by your username
 facebook: uniqvinh # replace by your username
 
