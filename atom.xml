@@ -6,20 +6,5 @@
     <link>
     </link>
     
-      
-      <item>
-        <title>Welcome to Zeit</title>
-        
-          <description>&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 27 Jul 2017 10:00:00 +0000</pubDate>
-        <link>
-        /welcome</link>
-        <guid isPermaLink="true">/welcome</guid>
-      </item>
-      
-    
   </channel>
 </rss>
