@@ -3,6 +3,7 @@ markdown: kramdown
 highlighter: rouge
 paginate: 100 # it will paginate after this number
 language: 'en-us'
+timezone: Asia/Ho_Chi_Minh
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 baseurl: /
@@ -81,13 +82,9 @@ exclude:
   - .travis.yml
   - Gemfile
   - Gemfile.lock
-  - GHOST.txt
   - gulpfile.js
-  - LICENSE
   - package.json
   - Rakefile
-  - README.md
   - script.py
-  - changelog.md
   - "*.Rmd"
   - .git*

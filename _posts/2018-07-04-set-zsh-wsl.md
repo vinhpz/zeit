@@ -1,15 +1,16 @@
 ---
 layout: post
 current: post
-cover:  assets/images/welcome.jpg
+cover:  assets/images/writing.jpg
 navigation: True
-title: Set and use Zsh as default shell in WSL on Windows 10 the right way
-date: 2018-07-04 16:00:00
-tags: [WSL]
+title: Set and use Zsh as default shell in WSL
+date: 2018-07-04 9:00:00
+tags: wsl
 class: post-template
-subclass: 'post tag-getting-started'
+subclass: 'post tag-wsl'
 author: vinh
 ---
+It isn't that hard...
 
 A few months ago, I wrote an article to show how to get Zsh in WSL on Windows 10. But I haven’t exactly shown how to make it the default shell. In facts, you can’t (not the “official” way anyway), because bash.exe in System32 folder is meant to call bash shell, not zsh. So no matter how you try to set zsh as the default shell through chsh -s $(which zsh), it doesn’t work if you still call to bash.exe everytime you use WSL.
 
