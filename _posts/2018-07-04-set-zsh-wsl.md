@@ -4,7 +4,7 @@ current: post
 cover:  assets/images/writing.jpg
 navigation: True
 title: Set and use Zsh as default shell in WSL
-date: 2018-07-04 9:00:00
+date: 2018-07-04 15:00:00 +7
 tags: wsl
 class: post-template
 subclass: 'post tag-wsl'
@@ -29,7 +29,7 @@ Now back to Hyper, edit the settings file where the **shell** and **shellArgs** 
     shell: 'C:\\Windows\\System32\\wsl.exe',
     shellArgs: [],
 
-![](https://cdn-images-1.medium.com/max/2000/1*NeQJKr2GrJXXuyYYVTRU9w.png)
+![](/assets/images/2018/Jul/fl-terminal.png)
 
 That’s Hyper, how about Visual Studio Code? It’s the same. Just change “bash.exe” to “wsl.exe” in the settings file
 
