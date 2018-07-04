@@ -2,9 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>Tips and tools</description>
+    <description>tips and tools</description>
     <link>
     </link>
+    
+      
+      <item>
+        <title>About my development environment</title>
+        
+          <description>&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 04 Jul 2018 20:00:00 +0700</pubDate>
+        <link>
+        /dev-environment</link>
+        <guid isPermaLink="true">/dev-environment</guid>
+      </item>
+      
     
       
       <item>
@@ -14,7 +29,7 @@
 
 </description>
         
-        <pubDate>Wed, 04 Jul 2018 09:00:00 +0000</pubDate>
+        <pubDate>Wed, 04 Jul 2018 15:00:00 +0700</pubDate>
         <link>
         /set-zsh-wsl</link>
         <guid isPermaLink="true">/set-zsh-wsl</guid>
@@ -29,7 +44,7 @@
 
 </description>
         
-        <pubDate>Wed, 04 Jul 2018 15:00:00 +0700</pubDate>
+        <pubDate>Wed, 04 Jul 2018 09:00:00 +0700</pubDate>
         <link>
         /welcome</link>
         <guid isPermaLink="true">/welcome</guid>

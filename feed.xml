@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-04T21:56:52+07:00</updated><id>/</id><title type="html">Zeit</title><subtitle>Tips and tools</subtitle><entry><title type="html">Set and use Zsh as default shell in WSL</title><link href="/set-zsh-wsl" rel="alternate" type="text/html" title="Set and use Zsh as default shell in WSL" /><published>2018-07-04T16:00:00+07:00</published><updated>2018-07-04T16:00:00+07:00</updated><id>/set-zsh-wsl</id><content type="html" xml:base="/set-zsh-wsl">&lt;p&gt;It isn’t that hard…&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-04T22:44:50+07:00</updated><id>/</id><title type="html">Zeit</title><subtitle>tips and tools</subtitle><entry><title type="html">About my development environment</title><link href="/dev-environment" rel="alternate" type="text/html" title="About my development environment" /><published>2018-07-04T20:00:00+07:00</published><updated>2018-07-04T20:00:00+07:00</updated><id>/dev-environment</id><content type="html" xml:base="/dev-environment">&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
+
+&lt;p&gt;Spoilers alert! It’s not as that fancy as the cover image that I use above.&lt;/p&gt;
+
+&lt;p&gt;So a year has passed. As the times change, people change, and so do their tools. In the web development world, even a month can make you surprised at how thing are different compare to one month ealier. But now I talk about one year… one whole year…&lt;/p&gt;
+
+&lt;p&gt;One year later, I still use WSL or formerly Bash on Windows. Surprise, surprise. Some may say, “Ugh! This guy is nut. WSL sucks… blah… blah…” But nah… Thing’s still going great with WSL, Microsoft even put many Linux distros on Microsoft Store now to make the installation process easier. And there’s even an terminal app for Windows 10 that look this cool, making using it such a joy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/fl-terminal.png&quot; alt=&quot;Fluent Terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can even choose light theme. BAAM!&lt;/p&gt;
+
+&lt;p&gt;So… what’s this terminal’s name again? It’s &lt;strong&gt;Fluent Terminal&lt;/strong&gt; by felixse, you can check it out at &lt;a href=&quot;https://github.com/felixse/FluentTerminal&quot;&gt;https://github.com/felixse/FluentTerminal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, let’s talk about text editor. Yes, I still use Visual Studio Code because it’s too perfect.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/vscode.png&quot; alt=&quot;Visual Studio Code&quot; /&gt;&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="dev" /><summary type="html">It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…</summary></entry><entry><title type="html">Set and use Zsh as default shell in WSL</title><link href="/set-zsh-wsl" rel="alternate" type="text/html" title="Set and use Zsh as default shell in WSL" /><published>2018-07-04T15:00:00+07:00</published><updated>2018-07-04T15:00:00+07:00</updated><id>/set-zsh-wsl</id><content type="html" xml:base="/set-zsh-wsl">&lt;p&gt;It isn’t that hard…&lt;/p&gt;
 
 &lt;p&gt;A few months ago, I wrote an article to show how to get Zsh in WSL on Windows 10. But I haven’t exactly shown how to make it the default shell. In facts, you can’t (not the “official” way anyway), because bash.exe in System32 folder is meant to call bash shell, not zsh. So no matter how you try to set zsh as the default shell through chsh -s $(which zsh), it doesn’t work if you still call to bash.exe everytime you use WSL.&lt;/p&gt;
 
@@ -24,14 +40,14 @@
 shellArgs: [],
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*NeQJKr2GrJXXuyYYVTRU9w.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/fl-terminal.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s Hyper, how about Visual Studio Code? It’s the same. Just change “bash.exe” to “wsl.exe” in the settings file&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;terminal.integrated.shell.windows&quot;: &quot;C:\\Windows\\sysnative\\wsl.exe&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;There we go! Everything should work fine now.&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="wsl" /><summary type="html">It isn’t that hard…</summary></entry><entry><title type="html">Welcome to Zeit</title><link href="/welcome" rel="alternate" type="text/html" title="Welcome to Zeit" /><published>2018-07-04T15:00:00+07:00</published><updated>2018-07-04T15:00:00+07:00</updated><id>/welcome</id><content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
+&lt;p&gt;There we go! Everything should work fine now.&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="wsl" /><summary type="html">It isn’t that hard…</summary></entry><entry><title type="html">Welcome to Zeit</title><link href="/welcome" rel="alternate" type="text/html" title="Welcome to Zeit" /><published>2018-07-04T09:00:00+07:00</published><updated>2018-07-04T09:00:00+07:00</updated><id>/welcome</id><content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
 
 &lt;p&gt;We know that first impressions are important, so we’ve populated your new site with some initial &lt;strong&gt;Getting Started&lt;/strong&gt; posts that will help you get familiar with everything in no time. This is the first one!&lt;/p&gt;
 
