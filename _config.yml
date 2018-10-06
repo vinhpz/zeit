@@ -17,6 +17,7 @@ logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://zeit.js.org/
 source_url: https://github.com/urvinh/urvinh.github.io/
+CNAME: zeit.js.org
 
 # Social info
 navigation: True # show the navbar links
@@ -43,6 +44,7 @@ permalink: /:title
 # Tags' info in `_data/tags_info.yml`
 
 # gems and other configs
+plugins_dir: [_plugins]
 plugins: [jekyll-paginate, jekyll-feed]
 
 feed:
