@@ -16,7 +16,7 @@ logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://zeit.js.org/
-source_url: https://github.com/vinhpz/vinhpz.github.io/
+source_url: https://github.com/urvinh/urvinh.github.io/
 
 # Social info
 navigation: True # show the navbar links
@@ -25,7 +25,7 @@ subscribers: True # you need to connect an external service for this to work,
 # by editing `_includes/subscribe-form.html`
 subscribe: https://zeit.us18.list-manage.com/subscribe/post?u=7bcc882e8e43813e17764c7ce&amp;id=cc5237eeed
 twitter: uniqvinh # replace by your username
-facebook: uniqvinh # replace by your username
+facebook: vinhw # replace by your username
 
 # Disqus
 disqus: True
@@ -68,13 +68,13 @@ feed:
 # or "master" otherwise
 safe: False
 lsi: False
-username: vinhpz 
-repo: vinhpz.github.io
+username: urvinh 
+repo: urvinh.github.io
 branch: source
-relative_source: ../vinhpz.github.io
+relative_source: ../urvinh.github.io
 destination: ../zeit-pages/
 production_url:  https://zeit.js.org/
-source_url:  https://github.com/vinhpz/vinhpz.github.io/
+source_url:  https://github.com/urvinh/urvinh.github.io/
 
 exclude:
   - assets/css
