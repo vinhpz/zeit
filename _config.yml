@@ -16,7 +16,7 @@ logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://zeit.js.org/
-source_url: https://github.com/urvinh/urvinh.github.io/
+source_url: https://github.com/vinhphm/vinhphm.github.io/
 CNAME: zeit.js.org
 
 # Social info
@@ -25,8 +25,8 @@ subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 subscribe: https://zeit.us18.list-manage.com/subscribe/post?u=7bcc882e8e43813e17764c7ce&amp;id=cc5237eeed
-twitter: uniqvinh # replace by your username
-facebook: vinhw # replace by your username
+twitter: viinhphm # replace by your username
+facebook: viinhphm # replace by your username
 
 # Disqus
 disqus: True
@@ -70,13 +70,13 @@ feed:
 # or "master" otherwise
 safe: False
 lsi: False
-username: urvinh 
-repo: urvinh.github.io
+username: vinhphm 
+repo: vinhphm.github.io
 branch: source
-relative_source: ../urvinh.github.io
+relative_source: ../vinhphm.github.io
 destination: ../zeit-pages/
 production_url:  https://zeit.js.org/
-source_url:  https://github.com/urvinh/urvinh.github.io/
+source_url:  https://github.com/vinhphm/vinhphm.github.io/
 
 exclude:
   - assets/css
