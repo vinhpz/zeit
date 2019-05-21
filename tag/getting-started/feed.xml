@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/getting-started/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2019-05-14T17:52:13+07:00</updated>
+  <updated>2019-05-21T15:36:20+00:00</updated>
   <id>/tag/getting-started/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">Welcome to Zeit</title>
       <link href="/welcome" rel="alternate" type="text/html" title="Welcome to Zeit" />
-      <published>2018-07-04T09:00:00+07:00</published>
-      <updated>2018-07-04T09:00:00+07:00</updated>
+      <published>2018-07-04T02:00:00+00:00</published>
+      <updated>2018-07-04T02:00:00+00:00</updated>
       <id>/welcome</id>
       <content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Zeit, it’s great to have you :)&lt;/p&gt;</content>
 

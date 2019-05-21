@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/vinh/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2019-05-14T17:52:13+07:00</updated>
+  <updated>2019-05-21T15:36:20+00:00</updated>
   <id>/author/vinh/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">About my development environment</title>
       <link href="/dev-environment" rel="alternate" type="text/html" title="About my development environment" />
-      <published>2018-07-04T20:00:00+07:00</published>
-      <updated>2018-07-04T20:00:00+07:00</updated>
+      <published>2018-07-04T13:00:00+00:00</published>
+      <updated>2018-07-04T13:00:00+00:00</updated>
       <id>/dev-environment</id>
       <content type="html" xml:base="/dev-environment">&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
 
@@ -84,8 +84,8 @@
     <entry>
       <title type="html">Set and use Zsh as default shell in WSL</title>
       <link href="/set-zsh-wsl" rel="alternate" type="text/html" title="Set and use Zsh as default shell in WSL" />
-      <published>2018-07-04T15:00:00+07:00</published>
-      <updated>2018-07-04T15:00:00+07:00</updated>
+      <published>2018-07-04T08:00:00+00:00</published>
+      <updated>2018-07-04T08:00:00+00:00</updated>
       <id>/set-zsh-wsl</id>
       <content type="html" xml:base="/set-zsh-wsl">&lt;p&gt;It isn’t that hard…&lt;/p&gt;
 
@@ -151,8 +151,8 @@ shellArgs: [],
     <entry>
       <title type="html">Welcome to Zeit</title>
       <link href="/welcome" rel="alternate" type="text/html" title="Welcome to Zeit" />
-      <published>2018-07-04T09:00:00+07:00</published>
-      <updated>2018-07-04T09:00:00+07:00</updated>
+      <published>2018-07-04T02:00:00+00:00</published>
+      <updated>2018-07-04T02:00:00+00:00</updated>
       <id>/welcome</id>
       <content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Zeit, it’s great to have you :)&lt;/p&gt;</content>
 
