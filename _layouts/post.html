@@ -12,7 +12,7 @@ into the {body} of the default.hbs template -->
 
 <header class="site-header outer">
   <div class="inner">
-    {% include site-nav.html %}
+  {% include site-nav.html %}
   </div>
 </header>
 
@@ -22,7 +22,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
   <div class="inner">
 
-    <article class="post-full {{ page.subclass }} {% unless page.cover %}no-image{% endunless %}">
+    <article class="post-full {% if page.tags.size > 0 %}{% for tag in page.tags %} tag-{{ tag | slugify: "latin" }}{% endfor %}{% endif %} {{ page.subclass }} {% unless page.cover %}no-image{% endunless %}">
 
       <header class="post-full-header">
         <section class="post-full-meta">
@@ -31,9 +31,9 @@ into the {body} of the default.hbs template -->
             <span class="date-divider">/</span>
             {% for tag in page.tags %}
               {% if forloop.index == page.tags.size %}
-                 <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>
+                 <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/'>{{ tag | upcase }}</a>
               {% else %}
-                 <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>,
+                 <a href='{{ site.baseurl }}tag/{{ tag | slugify: "latin" }}/'>{{ tag | upcase }}</a>,
               {% endif %}
             {% endfor %}
           {% endif %}
@@ -95,8 +95,9 @@ into the {body} of the default.hbs template -->
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {
-              this.page.url = '{{ site.url }}{{ site.baseurl }}';
-              this.page.identifier = '{{ site.title }}';
+              this.page.url = '{{ site.url }}{{ page.url }}';
+              this.page.identifier = '{{ page.id }}';
+              this.page.title = '{{ page.title }}';
             };
             (function() {
               var d = document, s = d.createElement('script');
@@ -116,18 +117,58 @@ into the {body} of the default.hbs template -->
 <!-- Links to Previous/Next posts -->
 <aside class="read-next outer">
   <div class="inner">
-    <div class="read-next-feed">
-      {% if page.tags.size > 0 %}
-        {% assign primary = page.tags | first %}
-        {% assign related_posts = 0 %}
+  <div class="read-next-feed">
+    {% if page.tags.size > 0 %}
+    {% assign primary = page.tags | first %}
+    {% assign related_posts = 0 %}
+    {% for post in site.posts %}
+      {% if post.tags.size > 0 %}
+      {% if post.tags contains primary %}
+      {% assign related_posts = related_posts | plus: 1 %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if related_posts > 1 %}
+      <article class="read-next-card"
+      {% if site.cover %}
+        style="background-image: url({{ site.baseurl }}{{ site.cover }})"
+      {% else %}
+        {% if page.cover %}
+        style="background-image: url(url({{ site.baseurl }}{{ page.cover }})"{% endif %}
+      {% endif %}
+      >
+      <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; {{ site.title }} &mdash;</small>
+        {% if primary %}
+        <h3 class="read-next-card-header-title"><a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a></h3>
+        {% endif %}
+      </header>
+      <div class="read-next-divider">{% include infinity.html %}</div>
+      <div class="read-next-card-content">
+        <ul>
+        {% assign count = 0 %}
         {% for post in site.posts %}
-          {% if post.tags.size > 0 %}
-            {% if post.tags contains primary %}
-            {% assign related_posts = related_posts | plus: 1 %}
-            {% endif %}
+          {% if post.tags contains primary %}
+          {% if post.title != page.title %}
+          {% assign count = count | plus: 1 %}
+          {% if count <= 3 %}
+            <li><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }}</a></li>
+          {% endif %}
+          {% endif %}
           {% endif %}
         {% endfor %}
+        </ul>
+      </div>
+      <footer class="read-next-card-footer">
+        <a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">
         {% if related_posts > 1 %}
+<<<<<<< HEAD
+          See all {{ related_posts | minus: 1 }} posts  →
+        {% elsif related_posts == 1 %}
+          {{ related_posts }} post  →
+        {% else %}
+          No posts.
+=======
           <article class="read-next-card"
             {% if site.cover %}
               style="background-image: url({{ site.baseurl }}{{ site.cover }})"
@@ -139,7 +180,7 @@ into the {body} of the default.hbs template -->
             <header class="read-next-card-header">
               <small class="read-next-card-header-sitetitle">&mdash; {{ site.title }} &mdash;</small>
               {% if primary %}
-                <h3 class="read-next-card-header-title"><a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a></h3>
+                <h3 class="read-next-card-header-title"><a href="{{ site.baseurl }}tag/{{ primary | slugify: "latin" }}/">{{ primary | capitalize }}</a></h3>
               {% endif %}
             </header>
             <div class="read-next-divider">{% include infinity.html %}</div>
@@ -159,7 +200,7 @@ into the {body} of the default.hbs template -->
               </ul>
             </div>
             <footer class="read-next-card-footer">
-              <a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">
+              <a href="{{ site.baseurl }}tag/{{ primary | slugify: "latin" }}/">
                 {% if related_posts > 1 %}
                   See all {{ related_posts | minus: 1 }} posts  →
                 {% elsif related_posts == 1 %}
@@ -170,20 +211,25 @@ into the {body} of the default.hbs template -->
               </a>
             </footer>
           </article>
+>>>>>>> upstream/master
         {% endif %}
-      {% endif %}
+        </a>
+      </footer>
+      </article>
+    {% endif %}
+    {% endif %}
 
-      <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
-      {% if page.next %}
-        {% include post-card-next.html %}
-      {% endif %}
+    <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+    {% if page.next %}
+    {% include post-card-next.html %}
+    {% endif %}
 
-      <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
-      {% if page.previous %}
-        {% include post-card-previous.html %}
-      {% endif %}
+    <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+    {% if page.previous %}
+    {% include post-card-previous.html %}
+    {% endif %}
 
-    </div>
+  </div>
   </div>
 </aside>
 
