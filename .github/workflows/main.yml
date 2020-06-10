@@ -28,8 +28,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
 
-    - uses: helaili/jekyll-action@2.0.3
+    - run: bundle install
+    - run: bundle exec rake site:deploy --quiet #--trace
       env: 
         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
-      with:
-        jekyll_src: 'source'
