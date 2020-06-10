@@ -22,18 +22,7 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.5'
-    - uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: bundle-use-ruby-${{ matrix.os }}-${{ matrix.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          bundle-use-ruby-${{ matrix.os }}-${{ matrix.ruby }}-
-    - name: bundle install
-      run: |
-        bundle config deployment true
-        bundle config path vendor/bundle
-        bundle install --jobs 4
-        
+    - run: bundle install
     - run: bundle exec rake
 
     # Runs a single command using the runners shell
