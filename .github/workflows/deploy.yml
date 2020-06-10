@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy to GitHub Pages
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -24,7 +24,7 @@ jobs:
 
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.5
+        ruby-version: 2.7
 
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v1
