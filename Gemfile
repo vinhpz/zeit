@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.0.0"
+gem "jekyll", "~> v3.8.7"
 group :jekyll_plugins do
     gem 'jekyll-timeago', '~> 0.13.1'
 end
