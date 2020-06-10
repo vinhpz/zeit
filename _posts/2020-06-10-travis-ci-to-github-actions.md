@@ -18,7 +18,7 @@ In my limited knowledge of GitHub Actions, I know there will have to be a *confi
 
 If you create it from the GitHub user interface, the sample file will look like this:
 
-```
+```yaml
 # This is a basic workflow to help you get started with Actions
 
 name: CI

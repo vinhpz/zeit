@@ -17,7 +17,7 @@ logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://zeit.js.org/
 source_url: https://github.com/vinhphm/vinhphm.github.io/
-CNAME: zeit.js.org
+CNAME: vinhphm.com
 
 # Social info
 navigation: True # show the navbar links
@@ -25,15 +25,15 @@ subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 subscribe: https://zeit.us18.list-manage.com/subscribe/post?u=7bcc882e8e43813e17764c7ce&amp;id=cc5237eeed
-twitter: vinhpoh # replace by your username
-facebook: vinhpoh # replace by your username
+twitter: vinhpoh
+facebook: vinhpoh
 
 # Disqus
 disqus: True
-disqus_shortname: zeit-v
+disqus_shortname: zeitz
 
 # Google Analytics
-google_analytics: UA-116140586-1
+google_analytics:
 
 # Permalinks
 permalink: /:title
