@@ -36,7 +36,7 @@ jobs:
 
     - run: bundle install
     - run: bundle exec rake site:deploy --quiet #--trace
-      with: 
+      env: 
         GIT_NAME: ${{ secrets.GIT_NAME }}
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
