@@ -23,6 +23,9 @@ jobs:
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
+
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.5
@@ -36,7 +39,7 @@ jobs:
           ${{ runner.os }}-gems-
 
     - run: bundle install
-    - run: bundle exec jekyll build
+    - run: sudo bundle exec jekyll build
 
     - uses: JamesIves/github-pages-deploy-action@3.5.5
       with:
