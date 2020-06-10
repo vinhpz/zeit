@@ -23,7 +23,6 @@ jobs:
       with:
         ruby-version: '2.5'
     - run: bundle install
-    - run: bundle exec rake
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
