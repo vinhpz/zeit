@@ -17,10 +17,6 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
-
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       with:
