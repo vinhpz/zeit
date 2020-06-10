@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator>
   <link href="/tag/dev/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-06-10T08:58:03+00:00</updated>
+  <updated>2020-06-10T09:45:38+00:00</updated>
   <id>/tag/dev/feed.xml</id>
 
   
@@ -30,6 +30,80 @@
   
   
 
+  
+    <entry>
+      <title type="html">Moving from Travis CI to GitHub Actions</title>
+      <link href="/travis-ci-to-github-actions" rel="alternate" type="text/html" title="Moving from Travis CI to GitHub Actions" />
+      <published>2020-06-10T09:00:00+00:00</published>
+      <updated>2020-06-10T09:00:00+00:00</updated>
+      <id>/travis-ci-to-github-actions</id>
+      <content type="html" xml:base="/travis-ci-to-github-actions">&lt;p&gt;As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-started&quot;&gt;Let’s started…&lt;/h1&gt;
+&lt;p&gt;In my limited knowledge of GitHub Actions, I know there will have to be a &lt;em&gt;config file&lt;/em&gt;, just like Travis. It should be located at &lt;strong&gt;.github/workflows/&lt;/strong&gt;. The file should be in YAML format and the name shouldn’t matter. In my case, it’s &lt;em&gt;main.yml&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you create it from the GitHub user interface, the sample file will look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+push:
+    branches: [ master ]
+pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+# This workflow contains a single job called &quot;build&quot;
+build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+    run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+    run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Vinh Pham</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">About my development environment</title>

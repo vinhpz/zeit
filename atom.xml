@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Moving from Travis CI to GitHub Actions</title>
+        
+          <description>&lt;p&gt;As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 10 Jun 2020 09:00:00 +0000</pubDate>
+        <link>
+        /travis-ci-to-github-actions</link>
+        <guid isPermaLink="true">/travis-ci-to-github-actions</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>About my development environment</title>
         
           <description>&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
