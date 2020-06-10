@@ -18,7 +18,7 @@ CNAME = CONFIG["CNAME"]
 
 def check_destination
   unless Dir.exist? CONFIG["destination"]
-    sh "git clone https://$GIT_NAME:$GH_TOKEN@github.com/#{USERNAME}/#{REPO}.git #{CONFIG["destination"]}"
+    sh "git clone https://${GIT_NAME}:${GITHUB_TOKEN}@github.com/#{USERNAME}/#{REPO}.git #{CONFIG["destination"]}"
   end
 end
 
@@ -43,17 +43,9 @@ namespace :site do
   desc "Generate the site and push changes to remote origin"
   task :deploy do
     # Detect pull request
-    if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
-      puts 'Pull request detected. Not proceeding with deploy.'
-      exit
-    end
-
-    # Configure git if this is run in Travis CI
-    if ENV["TRAVIS"]
-      sh "git config --global user.name $GIT_NAME"
-      sh "git config --global user.email $GIT_EMAIL"
-      sh "git config --global push.default simple"
-    end
+    sh "git config --global user.name ${GIT_NAME}"
+    sh "git config --global user.email ${GIT_EMAIL}"
+    sh "git config --global push.default simple"
 
     # Make sure destination folder exists as git repo
     check_destination
