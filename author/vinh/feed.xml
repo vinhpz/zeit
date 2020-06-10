@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator>
   <link href="/author/vinh/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-06-10T12:56:40+00:00</updated>
+  <updated>2020-06-10T14:57:59+00:00</updated>
   <id>/author/vinh/feed.xml</id>
 
   
@@ -100,7 +100,7 @@
       
 
       
-        <summary type="html">As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.</summary>
+        <summary type="html">As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions. Let’s get started… In my limited knowledge of GitHub Actions, I know there will have to be a config file, just like Travis. It should be located at .github/workflows/. The file should be in YAML format and the name shouldn’t matter. In my case, it’s main.yml If you create it from the GitHub user interface, the sample file will look like this: # This is a basic workflow to help you get started with Actions name: CI # Controls when the action will run. Triggers the workflow on push or pull request # events but only for the master branch on: push: branches: [ master ] pull_request: branches: [ master ] # A workflow run is made up of one or more jobs that can run sequentially or in parallel jobs: # This workflow contains a single job called &quot;build&quot; build: # The type of runner that the job will run on runs-on: ubuntu-latest # Steps represent a sequence of tasks that will be executed as part of the job steps: # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it - uses: actions/checkout@v2 # Runs a single command using the runners shell - name: Run a one-line script run: echo Hello, world! # Runs a set of commands using the runners shell - name: Run a multi-line script run: | echo Add other actions to build, echo test, and deploy your project. It’s quite easy to understand. But the theme I’m using is deeply written for Travis integration. At first, I didn’t know it so I get a lot of issue when copying and pasting from Travis config file. The tasks here are very simple, when there is a push action to a branch on GitHub, combine and build production files for the website and push it back to master branch. For hours, I had stuck at anthentication steps. I had tried some available actions in the marketplace but it doesn’t work like I intend. Then, I checked Jekyll theme source, it was deeply written for Travis and I have to make some changes to it so that I can use it with GitHub Actions. And ta-da, after dozens of failed build, GitHub Actions finally showed green tick.</summary>
       
 
       
@@ -150,7 +150,7 @@
       
 
       
-        <summary type="html">It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…</summary>
+        <summary type="html">It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment… Spoilers alert! It’s not as that fancy as the cover image that I use above. So a year has passed. As the times change, people change, and so do their tools. In the web development world, even a month can make you surprised at how thing are different compare to one month ealier. But now I talk about one year… one whole year… One year later, I still use WSL or formerly Bash on Windows. Surprise, surprise. Some may say, “Ugh! This guy is nut. WSL sucks… blah… blah…” But nah… Thing’s still going great with WSL, Microsoft even put many Linux distros on Microsoft Store now to make the installation process easier. And there’s even an terminal app for Windows 10 that look this cool, making using it such a joy. You can even choose light theme. BAAM! So… what’s this terminal’s name again? It’s Fluent Terminal by felixse, you can check it out at https://github.com/felixse/FluentTerminal Now, let’s talk about text editor. Yes, I still use Visual Studio Code because it’s too perfect.</summary>
       
 
       
@@ -217,7 +217,7 @@ shellArgs: [],
       
 
       
-        <summary type="html">It isn’t that hard…</summary>
+        <summary type="html">It isn’t that hard… A few months ago, I wrote an article to show how to get Zsh in WSL on Windows 10. But I haven’t exactly shown how to make it the default shell. In facts, you can’t (not the “official” way anyway), because bash.exe in System32 folder is meant to call bash shell, not zsh. So no matter how you try to set zsh as the default shell through chsh -s $(which zsh), it doesn’t work if you still call to bash.exe everytime you use WSL. Knowing this, the WSL team has made some changes. In the recent Windows 10 Insider builds for Windows 10 Fall Creator Update, there’s a wsl.exe file in System32 which performs two functions according to a member of the WSL team: When run without arguments, it will launch your default user’s default shell (which is configurable via the chsh command). When run with arguments, it is an easy way to run a specific Linux binary (wsl.exe ls). So that means you can actually use the true default shell now if you call to wsl.exe instead of bash.exe. Here’re examples, Hyper Terminal and Visual Studio Code. First of all, you have to set zsh as the default shell, (obviously). Type this to the current WSL terminal you’re using (like “Bash on Ubuntu on Windows”) chsh -s $(which zsh) Now back to Hyper, edit the settings file where the shell and shellArgs options are like this shell: 'C:\\Windows\\System32\\wsl.exe', shellArgs: [], That’s Hyper, how about Visual Studio Code? It’s the same. Just change “bash.exe” to “wsl.exe” in the settings file &quot;terminal.integrated.shell.windows&quot;: &quot;C:\\Windows\\sysnative\\wsl.exe&quot; There we go! Everything should work fine now.</summary>
       
 
       
