@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator>
-  <link href="/tag/manager/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/tag/password-manager/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-06-10T15:46:29+00:00</updated>
-  <id>/tag/manager/feed.xml</id>
+  <updated>2020-06-10T15:50:39+00:00</updated>
+  <id>/tag/password-manager/feed.xml</id>
 
   
   
@@ -56,9 +56,7 @@
       
         <category term="Bitwarden" />
       
-        <category term="&quot;Password" />
-      
-        <category term="Manager&quot;" />
+        <category term="password-manager" />
       
 
       

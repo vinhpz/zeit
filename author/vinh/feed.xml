@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator>
   <link href="/author/vinh/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-06-10T15:46:29+00:00</updated>
+  <updated>2020-06-10T15:50:39+00:00</updated>
   <id>/author/vinh/feed.xml</id>
 
   
@@ -56,9 +56,7 @@
       
         <category term="Bitwarden" />
       
-        <category term="&quot;Password" />
-      
-        <category term="Manager&quot;" />
+        <category term="password-manager" />
       
 
       
