@@ -74,7 +74,7 @@ username: vinhphm
 repo: vinhphm.github.io
 branch: source
 relative_source: ../vinhphm.github.io
-destination: ../zeit-pages/
+destination: ../build/
 production_url:  https://zeit.js.org/
 source_url:  https://github.com/vinhphm/vinhphm.github.io/
 

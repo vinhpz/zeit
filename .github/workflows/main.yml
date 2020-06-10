@@ -36,4 +36,11 @@ jobs:
           ${{ runner.os }}-gems-
 
     - run: bundle install
-    - run: bundle exec rake site:deploy --quiet #--trace
+    - run: bundle exec jekyll build
+
+    - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: ../build # The folder the action should deploy.
