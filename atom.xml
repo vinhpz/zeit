@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Introducing to Bitwarden</title>
+        
+          <description>&lt;p&gt;Lately, I’ve been obsessed about Bitwarden, an open source password managing tool. Although kind of new in the field, Bitwarden has proven to be the best password manager around with affordable price. “Affordable” here, I meant it’s basically free.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 11 Jun 2020 04:00:00 +0000</pubDate>
+        <link>
+        /bitwarden</link>
+        <guid isPermaLink="true">/bitwarden</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Moving from Travis CI to GitHub Actions</title>
         
           <description>&lt;p&gt;As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never working. After many frustrated attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.&lt;/p&gt;
