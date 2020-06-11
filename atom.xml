@@ -64,20 +64,6 @@
     
       
       <item>
-        <title>Introducing to Bitwarden</title>
-        
-          <description>&lt;p&gt;Lately, I’ve been obsessed about Bitwarden, an open source password managing tool. I think it’s perfect.&lt;/p&gt;
-</description>
-        
-        <pubDate>Wed, 10 Jun 2020 09:00:00 +0000</pubDate>
-        <link>
-        /bitwarden</link>
-        <guid isPermaLink="true">/bitwarden</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>About my development environment</title>
         
           <description>&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
