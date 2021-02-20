@@ -3,7 +3,7 @@ title_left    : "vinh"
 title_right   : "pham" # default: ""
 description   : "Thoughts, stories and ideas."
 keywords      : ""
-url           : https://zeit.js.org # site url
+url           : https://vinhphm.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
