@@ -59,6 +59,7 @@ lang: "en"  # default lang is en
 # langs refer to https://cloud.google.com/translate/docs/languages
 translate_langs:
   - lang: en
+    img: https://www.countryflags.io/us/flat/64.png
     text: English
 
   - lang: fr
