@@ -1,6 +1,6 @@
 # Site settings
-title_left    : ""
-title_right   : "zeit" # default: ""
+title_left    : "vinh"
+title_right   : "pham" # default: ""
 description   : "Thoughts, stories and ideas."
 keywords      : ""
 url           : https://zeit.js.org # site url
