@@ -133,9 +133,9 @@ night_mode: "manual"
 
 # Page default value
 defaults:
-  home:
-    heading: "Thoughts,stories and ideas"
-    subheading: "Hi, I'm Vinh Pham. I do stuffs with computer and sometimes write about it here."
+  - home:
+    heading: "Zeit"
+    subheading: "Thoughts, stories and ideas"
     banner: "/assets/images/banners/home.jpeg"
 
 # Pagination setting
