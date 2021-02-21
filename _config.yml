@@ -132,11 +132,11 @@ night_mode: "manual"
 #   - about.md
 
 # Page default value
-# defaults:
-home:
-  heading: "Thoughts,stories and ideas"
-  subheading: "Hi, I'm Vinh Pham. I do stuffs with computer and sometimes write about it here."
-  # banner: "Your image url"
+defaults:
+  home:
+    heading: "Thoughts,stories and ideas"
+    subheading: "Hi, I'm Vinh Pham. I do stuffs with computer and sometimes write about it here."
+    banner: "/assets/images/banners/home.jpeg"
 
 # Pagination setting
 paginate: 5
