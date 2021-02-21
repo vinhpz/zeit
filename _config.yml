@@ -139,7 +139,7 @@ night_mode: "manual"
 #     banner: "Your image url"
 
 # Pagination setting
-# paginate: 5
+paginate: 5
 
 # Disqus comments
 # disqus:
