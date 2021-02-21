@@ -1,3 +1,7 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
 $base-font-size: 18px !default;
 
 // Default theme colors
@@ -14,6 +18,6 @@ $theme-color: map-get($theme-colors, "snowwhite");
   $theme-color: map-get($theme-colors, $theme-name);
 } @else if str-index($theme-name, "#") == 1 {
   $theme-color: {{ site.theme_color | default: '#ffffff' }};
-};
+}
 
 @import "yat";
