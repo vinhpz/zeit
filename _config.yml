@@ -133,10 +133,10 @@ night_mode: "manual"
 
 # Page default value
 # defaults:
-#   home:
-#     heading: "Your awesome heading"
-#     subheading: "Your awesome subheading"
-#     banner: "Your image url"
+home:
+  heading: "Thoughts,stories and ideas"
+  subheading: "Hi, I'm Vinh Pham. I do stuffs with computer and sometimes write about it here."
+  # banner: "Your image url"
 
 # Pagination setting
 paginate: 5
