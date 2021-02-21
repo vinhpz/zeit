@@ -1,14 +1,9 @@
 ---
 layout: post
-current: post
-cover:  assets/images/writing.jpg
-navigation: True
+banner: assets/images/writing.jpg
 title: Set and use Zsh as default shell in WSL
-date: 2018-07-04 15:00:00 +7
 tags: wsl
-class: post-template
-subclass: 'post tag-wsl'
-author: vinh
+author: Vinh
 ---
 It isn't that hard...
 

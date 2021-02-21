@@ -1,14 +1,9 @@
 ---
 layout: post
-current: post
-cover:  assets/images/advanced.jpg
-navigation: True
+banner: assets/images/advanced.jpg
 title: About my development environment
-date: 2018-07-04 20:00:00 +7
 tags: dev
-class: post-template
-subclass: 'post dev'
-author: vinh
+author: Vinh
 ---
 It's been a while since I write or develop something. A year... perhap. Maybe it's time to update that article that I writed on Medium about my dev environment...
 

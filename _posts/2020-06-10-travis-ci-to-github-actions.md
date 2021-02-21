@@ -1,14 +1,9 @@
 ---
 layout: post
-current: post
-cover:  assets/images/2020/Jun/github-actions.png
-navigation: True
+banner: assets/images/2020/Jun/github-actions.png
 title: Moving from Travis CI to GitHub Actions
-date: 2020-06-10 16:00:00 +7
 tags: dev
-class: post-template
-subclass: 'post dev'
-author: vinh
+author: Vinh
 ---
 
 As you may already know, for this website, I'm using Jekyll with the help with some automations from Travis CI for the past two years. Because that's what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never work. After many frustrating attempts to fix it, I decided to move to something else. There are so many options, but since I'm using GitHub, why not use the in-house solution, GitHub Actions.
