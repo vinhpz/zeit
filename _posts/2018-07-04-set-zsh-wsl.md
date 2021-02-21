@@ -1,8 +1,7 @@
 ---
 layout: post
-banner: assets/images/writing.jpg
 title: Set and use Zsh as default shell in WSL
-tags: wsl
+tags: [wsl, zsh, Windows]
 author: Vinh
 ---
 It isn't that hard...

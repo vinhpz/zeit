@@ -1,6 +1,5 @@
 ---
 layout: post
-banner: assets/images/advanced.jpg
 title: About my development environment
 tags: dev
 author: Vinh

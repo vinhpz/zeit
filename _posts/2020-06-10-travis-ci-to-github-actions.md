@@ -1,8 +1,7 @@
 ---
 layout: post
-banner: assets/images/2020/Jun/github-actions.png
 title: Moving from Travis CI to GitHub Actions
-tags: dev
+tags: [dev, GitHub Actions, Travis CI]
 author: Vinh
 ---
 

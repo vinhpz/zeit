@@ -1,8 +1,7 @@
 ---
 layout: post
-banner: assets/images/2020/Jun/bitwarden.png
 title: Introducing to Bitwarden
-tags: [Bitwarden, password-manager]
+tags: [Bitwarden, password manager]
 author: Vinh
 ---
 Lately, I've been obsessed about Bitwarden, an open source password managing tool. Although kind of new in the field, Bitwarden has proven to be the best password manager around with affordable price. "Affordable" here, I meant it's basically free.
