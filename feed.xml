@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://zeit.js.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zeit.js.org/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-02-26T15:42:37+00:00</updated><id>https://zeit.js.org/feed.xml</id><title type="html">Zeit</title><subtitle>Thoughts, stories and ideas.</subtitle><author><name>Vinh Pham</name></author><entry><title type="html">Introducing to Bitwarden</title><link href="https://zeit.js.org/2020/06/10/bitwarden.html" rel="alternate" type="text/html" title="Introducing to Bitwarden" /><published>2020-06-10T00:00:00+00:00</published><updated>2020-06-10T00:00:00+00:00</updated><id>https://zeit.js.org/2020/06/10/bitwarden</id><content type="html" xml:base="https://zeit.js.org/2020/06/10/bitwarden.html">&lt;p&gt;Lately, I’ve been obsessed about Bitwarden, an open source password managing tool. Although kind of new in the field, Bitwarden has proven to be the best password manager around with affordable price. “Affordable” here, I meant it’s basically free.&lt;/p&gt;
+
+&lt;p&gt;Comming from 1Password, I wasn’t actually looking for a new service. I was satisfied with what 1Password. And one day, I decide I have to reduce costs and 1Password’s $3.99/month became too much. I looked for other option and ta-da, Bitwarden came up like a life-saver.&lt;/p&gt;
+
+&lt;p&gt;Bitwarden offer free plan with basic password managing feature that suits for most people. What makes Bitwarden stand out is that it allow you to sync your password to multiple devices with free plan. I know LastPass also offer this but I personally don’t like its UI.&lt;/p&gt;</content><author><name>Vinh</name></author><category term="Bitwarden" /><category term="password manager" /><summary type="html">Lately, I’ve been obsessed about Bitwarden, an open source password managing tool. Although kind of new in the field, Bitwarden has proven to be the best password manager around with affordable price. “Affordable” here, I meant it’s basically free.</summary></entry><entry><title type="html">Moving from Travis CI to GitHub Actions</title><link href="https://zeit.js.org/2020/06/10/travis-ci-to-github-actions.html" rel="alternate" type="text/html" title="Moving from Travis CI to GitHub Actions" /><published>2020-06-10T00:00:00+00:00</published><updated>2020-06-10T00:00:00+00:00</updated><id>https://zeit.js.org/2020/06/10/travis-ci-to-github-actions</id><content type="html" xml:base="https://zeit.js.org/2020/06/10/travis-ci-to-github-actions.html">&lt;p&gt;As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never work. After many frustrating attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-get-started&quot;&gt;Let’s get started…&lt;/h1&gt;
+&lt;p&gt;In my limited knowledge of GitHub Actions, I know there will have to be a &lt;em&gt;config file&lt;/em&gt;, just like Travis. It should be located at &lt;strong&gt;.github/workflows/&lt;/strong&gt;. The file should be in YAML format and the name shouldn’t matter. In my case, it’s &lt;em&gt;main.yml&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you create it from the GitHub user interface, the sample file will look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# This is a basic workflow to help you get started with Actions&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;CI&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Controls when the action will run. Triggers the workflow on push or pull request&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# events but only for the master branch&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# A workflow run is made up of one or more jobs that can run sequentially or in parallel&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# This workflow contains a single job called &quot;build&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# The type of runner that the job will run on&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Steps represent a sequence of tasks that will be executed as part of the job&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v2&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Runs a single command using the runners shell&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run a one-line script&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;echo Hello, world!&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Runs a set of commands using the runners shell&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run a multi-line script&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;echo Add other actions to build,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;echo test, and deploy your project.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s quite easy to understand. But the theme I’m using is deeply written for Travis integration. At first, I didn’t know it so I get a lot of issues when copying and pasting from Travis config file. The tasks here are very simple, when there is a push action to a branch on GitHub, combine and build production files for the website and push it back to master branch. For hours, I had stuck at anthentication steps. I had tried some available actions in the marketplace but it doesn’t work like I intend. Then, I checked Jekyll theme source, it was deeply written for Travis and I have to make some changes to it so that I can use it with GitHub Actions. And ta-da, after dozens of failed build, GitHub Actions finally showed green tick.&lt;/p&gt;</content><author><name>Vinh</name></author><category term="dev" /><category term="GitHub Actions" /><category term="Travis CI" /><summary type="html">As you may already know, for this website, I’m using Jekyll with the help with some automations from Travis CI for the past two years. Because that’s what the theme developer had recommended. But recently, Travis has decided to combine travis-ci.org and travis-ci.com and I had some problems with the migration to travis-ci.com. Authentication seemed never work. After many frustrating attempts to fix it, I decided to move to something else. There are so many options, but since I’m using GitHub, why not use the in-house solution, GitHub Actions.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://zeit.js.org/jekyll/2018/12/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-12-07T00:00:00+00:00</published><updated>2018-12-07T00:00:00+00:00</updated><id>https://zeit.js.org/jekyll/2018/12/07/welcome-to-jekyll</id><content type="html" xml:base="https://zeit.js.org/jekyll/2018/12/07/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;section 1&lt;/h2&gt;
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;section 2&lt;/h2&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;$ a * b = c ^ b $&lt;/p&gt;
+
+&lt;p&gt;$ 2^{\frac{n-1}{3}} $&lt;/p&gt;
+
+&lt;p&gt;$ \int_a^b f(x)\,dx. $&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jeffrey</name></author><category term="jekyll" /><category term="jekyll" /><category term="theme" /><category term="yat" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">An exhibit of Markdown</title><link href="https://zeit.js.org/markdown/2018/12/05/an-exhibit-of-markdown.html" rel="alternate" type="text/html" title="An exhibit of Markdown" /><published>2018-12-05T00:00:00+00:00</published><updated>2018-12-05T00:00:00+00:00</updated><id>https://zeit.js.org/markdown/2018/12/05/an-exhibit-of-markdown</id><content type="html" xml:base="https://zeit.js.org/markdown/2018/12/05/an-exhibit-of-markdown.html">&lt;p&gt;This note demonstrates some of what &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; is capable of doing.&lt;/p&gt;
+
+&lt;h2 id=&quot;an-exhibit-of-markdown&quot;&gt;An exhibit of Markdown&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Feel free to play with this page. Unlike regular notes, this doesn’t automatically save itself.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-formatting&quot;&gt;Basic formatting&lt;/h2&gt;
+
+&lt;p&gt;Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.&lt;/p&gt;
+
+&lt;p&gt;Paragraphs must be separated by a blank line. Basic formatting of &lt;em&gt;italics&lt;/em&gt; and &lt;strong&gt;bold&lt;/strong&gt; is supported. This &lt;em&gt;can be &lt;strong&gt;nested&lt;/strong&gt; like&lt;/em&gt; so.&lt;/p&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
+
+&lt;h3 id=&quot;ordered-list&quot;&gt;Ordered list&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;A second item&lt;/li&gt;
+  &lt;li&gt;Number 3&lt;/li&gt;
+  &lt;li&gt;Ⅳ&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Note: the fourth item uses the Unicode character for &lt;a href=&quot;http://www.fileformat.info/info/unicode/char/2163/index.htm&quot;&gt;Roman numeral four&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;unordered-list&quot;&gt;Unordered list&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An item&lt;/li&gt;
+  &lt;li&gt;Another item&lt;/li&gt;
+  &lt;li&gt;Yet another item&lt;/li&gt;
+  &lt;li&gt;And there’s more…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;paragraph-modifiers&quot;&gt;Paragraph modifiers&lt;/h2&gt;
+
+&lt;h3 id=&quot;code-block&quot;&gt;Code block&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Code blocks are very useful for developers and other people who look at code or other things that are written in plain text. As you can see, it uses a fixed-width font.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also make &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inline code&lt;/code&gt; to add code into other things.&lt;/p&gt;
+
+&lt;h3 id=&quot;quote&quot;&gt;Quote&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;headings&quot;&gt;Headings&lt;/h2&gt;
+
+&lt;p&gt;There are six levels of headings. They correspond with the six levels of HTML headings. You’ve probably noticed them already in the page. Each level down uses one more hash character.&lt;/p&gt;
+
+&lt;h3 id=&quot;headings-can-also-contain-formatting&quot;&gt;Headings &lt;em&gt;can&lt;/em&gt; also contain &lt;strong&gt;formatting&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;they-can-even-contain-inline-code&quot;&gt;They can even contain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inline code&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Of course, demonstrating what headings look like messes up the structure of the page.&lt;/p&gt;
+
+&lt;p&gt;I don’t recommend using more than three or four levels of headings here, because, when you’re smallest heading isn’t too small, and you’re largest heading isn’t too big, and you want each size up to look noticeably larger and more important, there there are only so many sizes that you can use.&lt;/p&gt;
+
+&lt;h2 id=&quot;urls&quot;&gt;URLs&lt;/h2&gt;
+
+&lt;p&gt;URLs can be made in a handful of ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A named link to &lt;a href=&quot;http://www.markitdown.net/&quot;&gt;MarkItDown&lt;/a&gt;. The easiest way to do these is to select what you want to make a link and hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+L&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Another named link to &lt;a href=&quot;http://www.markitdown.net/&quot;&gt;MarkItDown&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sometimes you just want a URL like &lt;a href=&quot;http://www.markitdown.net/&quot;&gt;http://www.markitdown.net/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;horizontal-rule&quot;&gt;Horizontal rule&lt;/h2&gt;
+
+&lt;p&gt;A horizontal rule is a line that goes across the middle of the page.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;It’s sometimes handy for breaking things up.&lt;/p&gt;
+
+&lt;h2 id=&quot;images&quot;&gt;Images&lt;/h2&gt;
+
+&lt;p&gt;Markdown can also contain images. I’ll need to add something here sometime.&lt;/p&gt;
+
+&lt;h2 id=&quot;finally&quot;&gt;Finally&lt;/h2&gt;
+
+&lt;p&gt;There’s actually a lot more to Markdown than this. See the official &lt;a href=&quot;http://daringfireball.net/projects/markdown/basics&quot;&gt;introduction&lt;/a&gt; and &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;syntax&lt;/a&gt; for more information. However, be aware that this is not using the official implementation, and this might work subtly differently in some of the little things.&lt;/p&gt;</content><author><name>Vinh Pham</name></author><category term="markdown" /><category term="example" /><category term="markdown" /><summary type="html">This note demonstrates some of what Markdown is capable of doing.</summary></entry><entry><title type="html">About my development environment</title><link href="https://zeit.js.org/2018/07/04/dev-environment.html" rel="alternate" type="text/html" title="About my development environment" /><published>2018-07-04T00:00:00+00:00</published><updated>2018-07-04T00:00:00+00:00</updated><id>https://zeit.js.org/2018/07/04/dev-environment</id><content type="html" xml:base="https://zeit.js.org/2018/07/04/dev-environment.html">&lt;p&gt;It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…&lt;/p&gt;
+
+&lt;p&gt;Spoilers alert! It’s not as that fancy as the cover image that I use above.&lt;/p&gt;
+
+&lt;p&gt;So a year has passed. As the times change, people change, and so do their tools. In the web development world, even a month can make you surprised at how thing are different compare to one month ealier. But now I talk about one year… one whole year…&lt;/p&gt;
+
+&lt;p&gt;One year later, I still use WSL or formerly Bash on Windows. Surprise, surprise. Some may say, “Ugh! This guy is nut. WSL sucks… blah… blah…” But nah… Thing’s still going great with WSL, Microsoft even put many Linux distros on Microsoft Store now to make the installation process easier. And there’s even an terminal app for Windows 10 that look this cool, making using it such a joy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/fl-terminal.png&quot; alt=&quot;Fluent Terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can even choose light theme. BAAM!&lt;/p&gt;
+
+&lt;p&gt;So… what’s this terminal’s name again? It’s &lt;strong&gt;Fluent Terminal&lt;/strong&gt; by felixse, you can check it out at &lt;a href=&quot;https://github.com/felixse/FluentTerminal&quot;&gt;https://github.com/felixse/FluentTerminal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, let’s talk about text editor. Yes, I still use Visual Studio Code because it’s too perfect.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/vscode.png&quot; alt=&quot;Visual Studio Code&quot; /&gt;&lt;/p&gt;</content><author><name>Vinh</name></author><category term="dev" /><summary type="html">It’s been a while since I write or develop something. A year… perhap. Maybe it’s time to update that article that I writed on Medium about my dev environment…</summary></entry><entry><title type="html">Set and use Zsh as default shell in WSL</title><link href="https://zeit.js.org/2018/07/04/set-zsh-wsl.html" rel="alternate" type="text/html" title="Set and use Zsh as default shell in WSL" /><published>2018-07-04T00:00:00+00:00</published><updated>2018-07-04T00:00:00+00:00</updated><id>https://zeit.js.org/2018/07/04/set-zsh-wsl</id><content type="html" xml:base="https://zeit.js.org/2018/07/04/set-zsh-wsl.html">&lt;p&gt;It isn’t that hard…&lt;/p&gt;
+
+&lt;p&gt;A few months ago, I wrote an article to show how to get Zsh in WSL on Windows 10. But I haven’t exactly shown how to make it the default shell. In facts, you can’t (not the “official” way anyway), because bash.exe in System32 folder is meant to call bash shell, not zsh. So no matter how you try to set zsh as the default shell through chsh -s $(which zsh), it doesn’t work if you still call to bash.exe everytime you use WSL.&lt;/p&gt;
+
+&lt;p&gt;Knowing this, the WSL team has made some changes. In the recent Windows 10 Insider builds for Windows 10 Fall Creator Update, there’s a &lt;strong&gt;wsl.exe&lt;/strong&gt; file in System32 which performs two functions &lt;a href=&quot;https://github.com/Microsoft/BashOnWindows/issues/846#issuecomment-300836949&quot;&gt;according to a member of the WSL team&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When run without arguments, it will launch your default user’s default shell (which is configurable via the chsh command).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When run with arguments, it is an easy way to run a specific Linux binary (wsl.exe ls).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So that means you can actually use the true default shell now if you call to &lt;strong&gt;wsl.exe&lt;/strong&gt; instead of &lt;strong&gt;bash.exe&lt;/strong&gt;. Here’re examples, Hyper Terminal and Visual Studio Code. First of all, you have to set zsh as the default shell, (obviously). Type this to the current WSL terminal you’re using (like “Bash on Ubuntu on Windows”)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chsh -s $(which zsh)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now back to Hyper, edit the settings file where the &lt;strong&gt;shell&lt;/strong&gt; and &lt;strong&gt;shellArgs&lt;/strong&gt; options are like this&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shell: 'C:\\Windows\\System32\\wsl.exe',
+shellArgs: [],
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/Jul/fl-terminal.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s Hyper, how about Visual Studio Code? It’s the same. Just change “bash.exe” to “wsl.exe” in the settings file&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;terminal.integrated.shell.windows&quot;: &quot;C:\\Windows\\sysnative\\wsl.exe&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There we go! Everything should work fine now.&lt;/p&gt;</content><author><name>Vinh</name></author><category term="wsl" /><category term="zsh" /><category term="Windows" /><summary type="html">It isn’t that hard…</summary></entry></feed>
